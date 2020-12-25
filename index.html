@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Joe Woods">
+    <meta property="og:url" content="https://joewoods.dev/">
+    <meta property="og:description" content="The homepage of developer Joe Woods.">
+    <meta property="og:site_name" content="joewoods.dev">
+    <link rel="alternate" type="application/rss+xml" title="Joe Woods — Blog" href="https://blog.joewoods.dev/rss.xml" />
+    <title>Joe Woods</title>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Fira Code';
+            /* See license at ./FiraCode-license-OFL.txt */
+            src: url('./FiraCode-VariableFont_wght.ttf') format('truetype');
+        }
+        body {
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            color: #c7e0e8;
+            background: #0e0215;
+            box-sizing: border-box;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            margin: 0;
+        }
+        #body {
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+        #container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            align-self: center;
+            justify-self: center;
+        }
+        #card {
+            padding: 8px 24px 14px 24px;
+            width: 37ch;
+        }
+        a {
+            color: #00b7ff;
+        }
+        a:visited {
+            color: #ca83f7;
+        }
+
+        .highlight {
+            padding: 20px 20px;
+            border: 4px solid #c7e0e8;
+        }
+    </style>
+</head>
+<body>
+    <div id="body">
+        <div id="container">
+            <div class="border border-20">
+            <div class="border border-19">
+            <div class="border border-18">
+            <div class="border border-17">
+            <div class="border border-16">
+            <div class="border border-15">
+            <div class="border border-14">
+            <div class="border border-13">
+            <div class="border border-12">
+            <div class="border border-11">
+            <div class="border border-10">
+            <div class="border border-9">
+            <div class="border border-8">
+            <div class="border border-7">
+            <div class="border border-6">
+            <div class="border border-5">
+            <div class="border border-4">
+            <div class="border border-3">
+            <div class="border border-2">
+            <div class="border border-1 highlight">
+                <div id="card">
+                    <h1>Joe Woods</h1>
+                    <p>software engineer in Philadelphia, PA</p>
+                    <p><a href="https://blog.joewoods.dev/">blog</a> <a href="https://notes.joewoods.dev/">notes</a> <a rel="me" href="https://merveilles.town/@tjwds">fediverse</a> <a href="mailto:joewoods@fastmail.com">email</a></p>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var i = 1;
+        var container = document.getElementById('container');
+        var wrappers = [];
+        for (var j = 0; j < 21; j++) {
+            wrappers.push(document.getElementsByClassName('border-' + j)[0]);
+        }
+        var interval;
+        var expand = function () {
+            interval = window.setInterval(function () {
+                wrappers[i].classList.add('highlight');
+                i++;
+                if (i === 20) {
+                    window.clearInterval(interval);
+                    contract();
+                }
+            }, 500);
+        }
+        var contract = function () {
+            interval = window.setInterval(function () {
+                if (i > 1) {
+                    wrappers[i].classList.remove('highlight');
+                    i--;
+                } else {
+                    window.clearInterval(interval);
+                    expand();
+                }
+            }, 100);
+        }
+        expand();
+    </script>
+</body>
+</html>
